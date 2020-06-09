@@ -4,7 +4,7 @@
 
 #IDE visualstudio2019
 #NetFramwor4.7
-#DB Sql Serve2014 adavance. ta na raiz de dev do sistema.pass.Mixer sistema user 741852sa
+#DB Sql Serve2014 adavance. ta na raiz de dev do sistema.pass.Mixer sistema user *******sa
 
 
 #modelo 3 camadas:
