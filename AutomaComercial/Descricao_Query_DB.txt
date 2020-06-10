@@ -1,0 +1,21 @@
+﻿//Conexao no Banco de Dados.
+//criar as query no SQL, e apenas chamar C#.
+//fazer um procedimento: buscar, inserir, apagar e editar.
+
+--necessario p/ ativar/utilizar o banco de dados em questão a ser sado: dbcomercio
+use dbcomercio
+
+--procedimento mostar:
+create proc spmostrar_categoria
+as
+select top 200 *from categoria
+order by idcategoria desc
+go
+
+--procedimento buscar nome
+create proc spbuscar_nome
+@textobuscar varchar(50) //aqui criar uma variavel tipo um textbox p/ fazer a busca.
+as select * from categoria
+where nome like @textobuscar + '%' //o 'like @textobuscar + '%'' - p/ mostrar tudo que começa c/ letra digitada endiante. 
+go
+
