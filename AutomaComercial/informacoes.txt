@@ -30,7 +30,7 @@ go
 
 --procedimento editar a categoria: neste caso vou setar no idcategoria as edições feitas (nome=@nome, descricao=@descricao 'onde' idcategoria=@idcategoria)
 create proc speditar_categoria
-@idcategoria int output,
+@idcategoria int,
 @nome varchar(50) ,
 @descricao varchar(100)
 as
@@ -58,5 +58,10 @@ update categoria set
 p/ reacionar os campos das propriedades com o banco de dados, usando o this.
 //cria metodos 'inserir, editar, busca, mostrar' p/ tratar e chamar quando for necessario.
 
+continuando 11/06/2020
+-preparando os méodos p/ acessar o dados, lembrando de fazer tramanto de erros, try, catch, finally, veja classe DCategoria
+-iniciar paramentos p/ insercao.
 
 
+
+        

@@ -1,3 +1,6 @@
+11/06/2020- part2
+criamos e parametramos os metodos da classe DCategoria: inserir, editar, excluir, assim buscando no C# via procedures, ou seja o banco vai fazer a execução chamda no C#. algoritmo comentados passo-a-passo.
+
 11/06/2020 
 //na classe DCategoria vamos continua criando os construtores, um vazio q ser generico p/ todas as classes, e outro com parametros do tipo 'int DCategoria Categoria'
 p/ reacionar os campos das propriedades com o banco de dados, usando o this.
