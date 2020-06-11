@@ -1,3 +1,9 @@
+11/06/2020 
+//na classe DCategoria vamos continua criando os construtores, um vazio q ser generico p/ todas as classes, e outro com parametros do tipo 'int DCategoria Categoria'
+p/ reacionar os campos das propriedades com o banco de dados, usando o this.
+//cria metodos 'inserir, editar, busca, mostrar' p/ tratar e chamar quando for necessario.
+
+
 ###################################### modulo 00  #########################################
 #preparação
 #Nome: AutomaçãoComercial
