@@ -1,0 +1,58 @@
+﻿//----Conexao no Banco de Dados, criar as query no SQL, e apenas chamar C# //fazer um procedimento: buscar, inserir, apagar e editar.
+
+//na query
+--para utilizar o banco de dados dbcomercio
+use dbcomercio
+
+--procedimento mostar
+create proc spmostrar_categoria
+as
+select top 200 *from categoria
+order by idcategoria desc
+go
+
+--procedimento buscar nome
+create proc spbuscar_nome
+@textobuscar varchar(50)
+as select * from categoria
+where nome like @textobuscar + '%'
+go
+
+--procedimento inserir na categoria: o variavel @idcategoria, será usado no speditar_categoria, p/ ser setado no idcategoria
+create proc spinserir_categoria
+@idcategoria int output,
+@nome varchar(50) ,
+@descricao varchar(100)
+as
+insert into categoria (nome, descricao)
+values (@nome, @descricao)
+go 
+
+--procedimento editar a categoria: neste caso vou setar no idcategoria as edições feitas (nome=@nome, descricao=@descricao 'onde' idcategoria=@idcategoria)
+create proc speditar_categoria
+@idcategoria int output,
+@nome varchar(50) ,
+@descricao varchar(100)
+as
+update categoria set
+ nome=@nome,
+ descricao=@descricao where
+ idcategoria=@idcategoria
+ go
+
+ --procedimento deletar
+ create proc spdeletar_categoria
+ @idcategoria int
+ as
+ delete from categoria where
+ idcategoria=@idcategoria
+ go
+
+ //fim query
+
+ //----no projeto CamadaDados, vamos criar uma segunda classe chamada 'DCategoria' - class DCategoria //Classe Dados da Categoria
+ nessa classe 'DCategoria' vamos criar as propriedade p/ obter e setar os campos.
+ 
+
+
+

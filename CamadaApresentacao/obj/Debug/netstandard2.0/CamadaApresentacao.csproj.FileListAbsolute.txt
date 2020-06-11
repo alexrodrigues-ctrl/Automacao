@@ -1,0 +1,5 @@
+C:\ProjetosSharp\Automacao\AutomaComercial\CamadaApresentacao\bin\Debug\netstandard2.0\CamadaDados.dll
+C:\ProjetosSharp\Automacao\AutomaComercial\CamadaApresentacao\bin\Debug\netstandard2.0\CamadaNegocio.dll
+C:\ProjetosSharp\Automacao\AutomaComercial\CamadaApresentacao\obj\Debug\netstandard2.0\CamadaApresentacao.csprojAssemblyReference.cache
+C:\ProjetosSharp\Automacao\AutomaComercial\CamadaApresentacao\obj\Debug\netstandard2.0\CamadaApresentacao.AssemblyInfoInputs.cache
+C:\ProjetosSharp\Automacao\AutomaComercial\CamadaApresentacao\obj\Debug\netstandard2.0\CamadaApresentacao.AssemblyInfo.cs
