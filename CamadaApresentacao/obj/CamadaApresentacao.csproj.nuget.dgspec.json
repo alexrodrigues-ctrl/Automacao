@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ProjetosSharp\\Automacao\\AutomaComercial\\CamadaApresentacao\\CamadaApresentacao.csproj": {}
+    "E:\\SistemaAutomacao\\AutomaComercial\\CamadaApresentacao\\CamadaApresentacao.csproj": {}
   },
   "projects": {
-    "C:\\ProjetosSharp\\Automacao\\AutomaComercial\\CamadaApresentacao\\CamadaApresentacao.csproj": {
+    "E:\\SistemaAutomacao\\AutomaComercial\\CamadaApresentacao\\CamadaApresentacao.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProjetosSharp\\Automacao\\AutomaComercial\\CamadaApresentacao\\CamadaApresentacao.csproj",
+        "projectUniqueName": "E:\\SistemaAutomacao\\AutomaComercial\\CamadaApresentacao\\CamadaApresentacao.csproj",
         "projectName": "CamadaApresentacao",
-        "projectPath": "C:\\ProjetosSharp\\Automacao\\AutomaComercial\\CamadaApresentacao\\CamadaApresentacao.csproj",
+        "projectPath": "E:\\SistemaAutomacao\\AutomaComercial\\CamadaApresentacao\\CamadaApresentacao.csproj",
         "packagesPath": "C:\\Users\\alexz\\.nuget\\packages\\",
-        "outputPath": "C:\\ProjetosSharp\\Automacao\\AutomaComercial\\CamadaApresentacao\\obj\\",
+        "outputPath": "E:\\SistemaAutomacao\\AutomaComercial\\CamadaApresentacao\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -31,8 +31,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\ProjetosSharp\\Automacao\\AutomaComercial\\CamadaNegocio\\CamadaNegocio.csproj": {
-                "projectPath": "C:\\ProjetosSharp\\Automacao\\AutomaComercial\\CamadaNegocio\\CamadaNegocio.csproj"
+              "E:\\SistemaAutomacao\\AutomaComercial\\CamadaNegocio\\CamadaNegocio.csproj": {
+                "projectPath": "E:\\SistemaAutomacao\\AutomaComercial\\CamadaNegocio\\CamadaNegocio.csproj"
               }
             }
           }
@@ -71,14 +71,14 @@
         }
       }
     },
-    "C:\\ProjetosSharp\\Automacao\\AutomaComercial\\CamadaDados\\CamadaDados.csproj": {
+    "E:\\SistemaAutomacao\\AutomaComercial\\CamadaDados\\CamadaDados.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProjetosSharp\\Automacao\\AutomaComercial\\CamadaDados\\CamadaDados.csproj",
+        "projectUniqueName": "E:\\SistemaAutomacao\\AutomaComercial\\CamadaDados\\CamadaDados.csproj",
         "projectName": "CamadaDados",
-        "projectPath": "C:\\ProjetosSharp\\Automacao\\AutomaComercial\\CamadaDados\\CamadaDados.csproj",
+        "projectPath": "E:\\SistemaAutomacao\\AutomaComercial\\CamadaDados\\CamadaDados.csproj",
         "packagesPath": "C:\\Users\\alexz\\.nuget\\packages\\",
-        "outputPath": "C:\\ProjetosSharp\\Automacao\\AutomaComercial\\CamadaDados\\obj\\",
+        "outputPath": "E:\\SistemaAutomacao\\AutomaComercial\\CamadaDados\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -134,14 +134,14 @@
         }
       }
     },
-    "C:\\ProjetosSharp\\Automacao\\AutomaComercial\\CamadaNegocio\\CamadaNegocio.csproj": {
+    "E:\\SistemaAutomacao\\AutomaComercial\\CamadaNegocio\\CamadaNegocio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProjetosSharp\\Automacao\\AutomaComercial\\CamadaNegocio\\CamadaNegocio.csproj",
+        "projectUniqueName": "E:\\SistemaAutomacao\\AutomaComercial\\CamadaNegocio\\CamadaNegocio.csproj",
         "projectName": "CamadaNegocio",
-        "projectPath": "C:\\ProjetosSharp\\Automacao\\AutomaComercial\\CamadaNegocio\\CamadaNegocio.csproj",
+        "projectPath": "E:\\SistemaAutomacao\\AutomaComercial\\CamadaNegocio\\CamadaNegocio.csproj",
         "packagesPath": "C:\\Users\\alexz\\.nuget\\packages\\",
-        "outputPath": "C:\\ProjetosSharp\\Automacao\\AutomaComercial\\CamadaNegocio\\obj\\",
+        "outputPath": "E:\\SistemaAutomacao\\AutomaComercial\\CamadaNegocio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -161,8 +161,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\ProjetosSharp\\Automacao\\AutomaComercial\\CamadaDados\\CamadaDados.csproj": {
-                "projectPath": "C:\\ProjetosSharp\\Automacao\\AutomaComercial\\CamadaDados\\CamadaDados.csproj"
+              "E:\\SistemaAutomacao\\AutomaComercial\\CamadaDados\\CamadaDados.csproj": {
+                "projectPath": "E:\\SistemaAutomacao\\AutomaComercial\\CamadaDados\\CamadaDados.csproj"
               }
             }
           }

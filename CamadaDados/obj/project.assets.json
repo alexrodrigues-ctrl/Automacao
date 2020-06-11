@@ -858,11 +858,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\ProjetosSharp\\Automacao\\AutomaComercial\\CamadaDados\\CamadaDados.csproj",
+      "projectUniqueName": "E:\\SistemaAutomacao\\AutomaComercial\\CamadaDados\\CamadaDados.csproj",
       "projectName": "CamadaDados",
-      "projectPath": "C:\\ProjetosSharp\\Automacao\\AutomaComercial\\CamadaDados\\CamadaDados.csproj",
+      "projectPath": "E:\\SistemaAutomacao\\AutomaComercial\\CamadaDados\\CamadaDados.csproj",
       "packagesPath": "C:\\Users\\alexz\\.nuget\\packages\\",
-      "outputPath": "C:\\ProjetosSharp\\Automacao\\AutomaComercial\\CamadaDados\\obj\\",
+      "outputPath": "E:\\SistemaAutomacao\\AutomaComercial\\CamadaDados\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

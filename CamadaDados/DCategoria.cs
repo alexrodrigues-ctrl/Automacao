@@ -36,5 +36,33 @@ namespace CamadaDados
         }
         //public string TextoBuscar1 { get => _TextoBuscar1; set => _TextoBuscar1 = value; }
         //public string Descricao1 { get => _Descricao; set => _Descricao = value; }
+
+        //construtor vazio, todas as classes irao usar
+        public DCategoria()
+        {
+        }
+        //construtor c/ parametros p/ usar as variaveis do campo get, set das propriedades
+        public DCategoria(int idcategoria, string nome, string descricao, string textobuscar)
+        {
+            
+        }
+        //metodo inserir, editar, mostar
+        public string Inserir(DCategoria Categoria)
+        {
+            //return;
+        }
+        public string Editar(DCategoria Categoria)
+        {
+            //return;
+        }
+        public string TextoBuscar(DCategoria Categoria)
+        {
+            //return;
+        }
+        public DataTable Mostrar(DCategoria Categoria) //pq DataTable? pq sera mostrado numa tabela
+        {
+            //return;
+        }
+
     }
 }
