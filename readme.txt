@@ -1,3 +1,10 @@
+12/06/2020 -parte1
+//terminado de codificar no C# a chamada via a procedures e conexao do banco de dados na CamadaDados nos metodos() inserir, editar, excluir, mostrar  e buscarnome.
+-assim terminei de preparar minha CamadaDados na classe 'DCategoria'.
+-agora vamos trabalhar na CamadaNegocio: a CamadaNegocio é referenciada a CamadaDados, para se comunicarem entre si,
+-na CamadaNegocio, vamos cria uma camada NCategoria p/ cria os metodos onde vamos criar os obejos p/ inserir, editar, excluir etc.
+
+
 11/06/2020- part2
 criamos e parametramos os metodos da classe DCategoria: inserir, editar, excluir, assim buscando no C# via procedures, ou seja o banco vai fazer a execução chamda no C#. algoritmo comentados passo-a-passo.
 
