@@ -38,6 +38,11 @@ namespace CamadaNegocio
             return new DCategoria().Mostrar(); // somente retornar o metodo CamadaDados.Mostrar()
         }
         //metodo Busca Nome
-        
+        public static DataTable BuscarNone(string textonome) 
+        {
+            DCategoria Obj = new DCategoria();
+            Obj.TextoBuscar = textonome;
+            return Obj.BuscarNome(Obj);
+        }
     }
 }

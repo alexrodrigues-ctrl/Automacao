@@ -5,11 +5,13 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomaComercial", "AutomaComercial.csproj", "{AB45B519-5048-46DD-A3E0-6C87CDD8AA68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamadaApresentacao", "..\CamadaApresentacao\CamadaApresentacao.csproj", "{FD15EB36-B2DC-4830-A1AC-AA92B7FD8D9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CamadaApresentacao", "..\CamadaApresentacao\CamadaApresentacao.csproj", "{FD15EB36-B2DC-4830-A1AC-AA92B7FD8D9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamadaNegocio", "..\CamadaNegocio\CamadaNegocio.csproj", "{69E86216-51EB-4B45-ACBB-EAF682E9E17B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CamadaNegocio", "..\CamadaNegocio\CamadaNegocio.csproj", "{69E86216-51EB-4B45-ACBB-EAF682E9E17B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamadaDados", "..\CamadaDados\CamadaDados.csproj", "{851C9FB6-149D-4C6C-90B0-38664A487744}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CamadaDados", "..\CamadaDados\CamadaDados.csproj", "{851C9FB6-149D-4C6C-90B0-38664A487744}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frmCategoria", "..\frmCategoria\frmCategoria.csproj", "{3F20645C-BD2D-401A-A9FC-32B9F9455E25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{851C9FB6-149D-4C6C-90B0-38664A487744}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{851C9FB6-149D-4C6C-90B0-38664A487744}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{851C9FB6-149D-4C6C-90B0-38664A487744}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F20645C-BD2D-401A-A9FC-32B9F9455E25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F20645C-BD2D-401A-A9FC-32B9F9455E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F20645C-BD2D-401A-A9FC-32B9F9455E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F20645C-BD2D-401A-A9FC-32B9F9455E25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

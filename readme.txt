@@ -3,6 +3,17 @@
 -assim terminei de preparar minha CamadaDados na classe 'DCategoria'.
 -agora vamos trabalhar na CamadaNegocio: a CamadaNegocio é referenciada a CamadaDados, para se comunicarem entre si,
 -na CamadaNegocio, vamos cria uma camada NCategoria p/ cria os metodos onde vamos criar os obejos p/ inserir, editar, excluir etc.
+>> ASSIM fizemos a CamadaNegocio e CamadaDados, agora vamos p/ CamadaApresentacao.
+
+12/06/2020-parte2
+//agora vamos trabalhar na CamadaApresentacao: assim se faz o conceito de 3 camadas; 1CamadaDados interliga com a 2CamadaNegocio que interliga com a 3CamadaApresentacao.
+-podemos assim, nas camadas ligar o Banco de Dados com o C#, e o inverso tb, ligando o C# com o BD.
+-é na CamadaApresentacao que vamos criar as telas, a interface com o usúario.
+-criamos um Form chamado frmCategoria em CamadaApresentacao. No frmCategoria crias as telas p/ poder envia e receber do BD...
+-No formulário frmCategoria foi criado um tabcontrol com duas abas 'Listar' e 'Configurações' em lista será exibi, em configuracoes sera modificado os dados.
+-clonando o projeto terá as tela a disposição. Uso a IDE Visual Studio 2019.
+
+
 
 
 11/06/2020- part2
