@@ -78,23 +78,24 @@ namespace frmCategoria
         {
                 // os indices começam a conta de zero, ou seja, 0,1,2,3,4 
             this.DataGridCategoria.Columns[0].Visible = false; //indice zero, 1ª coluna, este qui é a coluna deletar
-            this.DataGridCategoria.Columns[1].Visible = false;//indice um, 2ª coluna, este aqui é a coluna código
-        
+            this.DataGridCategoria.Columns[1].Visible = false;//indice um, 2ª coluna, este aqui é a coluna código        
         }
-
-        private void button3_Click(object sender, EventArgs e)
+        //metdo mostrar o DataGridCategoria, a tabela
+        private void MostrarDataGridCategoria()
         {
-
+            //aqui chamo na DataGridCategoria com o DataSource o metodo Mostrar() q ta na CamadaNegocio na classe NCategoria
+            this.DataGridCategoria.DataSource = NCategoria.Mostrar();
+            this.OcultarColuna();//chamar o metodo p/ ocultar as colunas
+            //mostra na label Total de Registro(lbTotalRegistro), quantos registro na tabela.
+            lbTotalRegistro.Text = "Total de registro: " + Convert.ToString(DataGridCategoria.Rows.Count); 
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmcategoria_Load(object sender, EventArgs e)
         {
-
+            this.Top = 0;
+            this.Left = 0;
+            this.MostrarDataGridCategoria();
+            this.habilitaCampos(false);
+            this.habilitarbotoes();
         }
     }
 }

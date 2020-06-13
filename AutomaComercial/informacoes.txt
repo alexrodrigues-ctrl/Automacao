@@ -108,15 +108,28 @@ continuando 11/06/2020
 -No formulário frmCategoria foi criado um tabcontrol com duas abas 'Listar' e 'Configurações' em lista será exibi, em configuracoes sera modificado os dados.
 -clonando o projeto terá as tela a disposição. Uso a IDE Visual Studio 2019.
 
-13/06/2020 -p1
+13/06/2020 -parte1: 
+-no Formulario Form1 Em frmCategoria na sua TELA de [Design] duplo clique p/ acessa seus código onde fica (frmcategoria_Load)  referenci a CamadaNegocio com o formcategoria e adiciona o using CamadaNegocio;pq vamos usar muitas funcoes q tá no CamadaNegocio 
+- Logo abaixo/dentro da classe: public partial class frmcategoria : Form ---> crie as variaveis p/ poder diferenciar quando estamos criando um novo ou apenas editando: 
+private bool eNovo = false;  private bool eEditar = false;
+
 //vamos tratar de informacoes ao usuario, usando errorProvider e toolTip no formulario Controle de Categoria (frmcategoria), apenas p/ indicar ao usuario cada textbox o q se espera.
 -errorProvider, vai mostrar o icone de erro,
 -toolTip, vai mostrar a mensagem que vou definir no campo a ser preenchido. na propriedade deve coloca com true a opcao Isballoon, p/ q o balao de mensagem seja exibida.
--agora no EVENTO LOAD do formcategoria (frmcategoria_Load) referenci a CamadaNegocio com o formcategoria e adiciona o using CamadaNegocio;pq vamos usar muitas funcoes q tá no CamadaNegocio 
--ainda no LOAD, crie as variaveis p/ poder diferenciar quando estamos criando um novo ou apenas editando: 
-private bool eNovo = false;  private bool eEditar = false;
 
--vamos criar um metodo p/ chamar ums mensagem de quando salvou, editou com sucesso e outra pra avisar se deu erro ao salvar/editar.
+onde?
+dentro do metodo já existente:
+public frmcategoria()
+        {
+            InitializeComponent();
+            >>aqui
+            this.ttMensagem.SetToolTip(this.txtNomeCotegoria, "Insira o Nome da Categoria.");
+            this.ttMensagem.SetToolTip(this.txtIdCategoria, "Insira o Código da Categoria.");
+            this.ttMensagem.SetToolTip(this.txtDescricacaoCategoria, "Insira a descrição da Categoria.");
+        }
+Agora:
+
+-vamos criar um metodo p/ chamar umas mensagem de quando salvou, editou com sucesso e outra pra avisar se deu erro ao salvar/editar.
 -vamos criar um metodo p/ limpar os campos sempre que preenchemos e finalizar.
 IMPORTANTE: pq criar os MÉTODOS? Pq ao invéis de todas vez que usar uma determida tarefa e criar uma mensagem avisando se deu certo ou errado por exemplo;
 apenas chamamos o metodo e o metodo já ta criado pra fazer isso quantas vezes for preciso.
@@ -125,9 +138,19 @@ apenas chamamos o metodo e o metodo já ta criado pra fazer isso quantas vezes f
 -vamos criar um metodo p/ habilitar/desabilitar os botoes, pq se eu for criar um novo, o editar nao pode tá habilitado, por ex.:
 ATENÇÃO: nas regras de condições: tá tudo comentado no código.
 
--vamos criar um metodo p/ oucultar colunas indesejaveis na grid, ou seja, na tabela. pra quê mostrar a coloulna código e deletar? vamos oculta-la. e pode ser ocultada qualquer uma, serve como estudo
-
+-vamos criar um metodo p/ ocultar colunas indesejaveis na grid, ou seja, na tabela. pra quê mostrar a coloulna código e deletar? vamos oculta-la. e pode ser ocultada qualquer uma, serve como estudo
 ---
+13/06/2020 -parte2: continuando a criação dos metodos
+-vamos criar um metodo p/ mostrar() e definir o que mostra na tabela (DataGridCategoria),  total de registro usando uma label, e ocultar as colunas nao necessario, ja usando o metodo ocultar já criado.  
 
+Agora vamos carregar a Tabela no formulario, quando a tela for aberta:
+
+-Dentro do evento LOAD:
+private void frmcategoria_Load(object sender, EventArgs e)
+        {
+            >>aqui
+        }
+-vamos posicionar,
+-vamos chamar os metodos criados,
 
         
