@@ -1,10 +1,30 @@
-﻿//----Conexao no Banco de Dados, criar as query no SQL, e apenas chamar C# //fazer um procedimento: buscar, inserir, apagar e editar.
+﻿Criação de sistema de vendas, usando IDE Visual Studio liguagem C#, Banco de Dados; sql server 2014. Será em 3 camadas,
+CamadaApresentação,
+CamadaDados,
+CamadaNegocio.
 
-//na query
---para utilizar o banco de dados dbcomercio
+1)Criando um projeto na IDE chamado AutomaComercial (pode dá o nome q quiser)
+2)Criando as CLASSES: CamadaApresentação, CamadaDados, CamadaNegocio.
+3)Criando as referencias entre as camadas, p/ usar as funcoes umas das outras, (CamadaNegocio, ref com CamadaDados. CamadaApresentacao ref com CamadaNegocio )
+
+na IDE, por enquanto é só, vamos por SQL Server 2014
+
+4)Vamos agora preparar banco de dados: (Definir Tabelas/Modelagem/Chave Primaria/chave estrangera).
+A intenção é usar o BD p/ tratar as consulta no BD, e nao fazer as consulta pelo C#.
+Conexao no Banco de Dados, criar as query no SQL, e apenas chamar pelo C# //fazer um procedimento: buscar, inserir, apagar e editar.
+////////////////////////////////////////////////
+*Banco de Dados BD:
+nome banco de dado: dbcomercio
+usuario: sa
+senha: definida pelo usuario
+ 5) crie um banco de dado e escolha um nome: por ex.: dbcomercio
+ 6) Crie uma nova consulta (New Query) CRIAR TABELA DE CATEGORIA:
+
+//já na tela da query
+--para utilizar o banco de dados dbcomercio o use o camando abaixo: isso faz ativa o BD que vamos usar.
 use dbcomercio
 
---procedimento mostar
+--criando procedimento (procedure) mostar
 create proc spmostrar_categoria
 as
 select top 200 *from categoria
@@ -48,13 +68,24 @@ update categoria set
  idcategoria=@idcategoria
  go
 
- //fim query
+ //fim query.
+ Voltando para IDE Visual Studio 2019.
 
- //----no projeto CamadaDados, vamos criar uma segunda classe chamada 'DCategoria' - class DCategoria //Classe Dados da Categoria
- nessa classe 'DCategoria' vamos criar as propriedade p/ obter e setar os campos.
+ Uma vez o BD todo pronto, vamos pra IDE devenvolver os código em C# para chamar o BD.
+
+ Abra a IDE Visual Studio e abra o projeto, dei o nome: AutomaComercial
+
+ PS.: OS algoritmo estao todos pronto e comentados nas classe e projetos, é só clonar/baixar e seguir.
+ Se tiver alguma dificuldades é só me acionar pelo email: alex.zatec@gmail.com
+ Farei o acompanhamento sem qualquer problema, isso fará com que meu desenvolminto se aprimore. Não desista!
+
+ 7) No projeto dentro da CamadaDados, vamos criar uma classe chamada 'DCategoria' - class DCategoria //Classe Dados da Categoria
+ nessa classe 'DCategoria' vamos criar as propriedade p/ obter e setar os campos. 
+
+ PS.: OS algoritmo estao todos pronto e comentados nas classe e projetos, é só clonar/baixar e seguir.
 
 11/06/2020 
-//na classe DCategoria vamos continua criando os construtores, um vazio q ser generico p/ todas as classes, e outro com parametros do tipo 'int DCategoria Categoria'
+na classe DCategoria vamos continua criando os construtores, um vazio q ser generico p/ todas as classes, e outro com parametros do tipo 'int DCategoria Categoria'
 p/ reacionar os campos das propriedades com o banco de dados, usando o this.
 //cria metodos 'inserir, editar, busca, mostrar' p/ tratar e chamar quando for necessario.
 
@@ -77,10 +108,26 @@ continuando 11/06/2020
 -No formulário frmCategoria foi criado um tabcontrol com duas abas 'Listar' e 'Configurações' em lista será exibi, em configuracoes sera modificado os dados.
 -clonando o projeto terá as tela a disposição. Uso a IDE Visual Studio 2019.
 
+13/06/2020 -p1
+//vamos tratar de informacoes ao usuario, usando errorProvider e toolTip no formulario Controle de Categoria (frmcategoria), apenas p/ indicar ao usuario cada textbox o q se espera.
+-errorProvider, vai mostrar o icone de erro,
+-toolTip, vai mostrar a mensagem que vou definir no campo a ser preenchido. na propriedade deve coloca com true a opcao Isballoon, p/ q o balao de mensagem seja exibida.
+-agora no EVENTO LOAD do formcategoria (frmcategoria_Load) referenci a CamadaNegocio com o formcategoria e adiciona o using CamadaNegocio;pq vamos usar muitas funcoes q tá no CamadaNegocio 
+-ainda no LOAD, crie as variaveis p/ poder diferenciar quando estamos criando um novo ou apenas editando: 
+private bool eNovo = false;  private bool eEditar = false;
 
+-vamos criar um metodo p/ chamar ums mensagem de quando salvou, editou com sucesso e outra pra avisar se deu erro ao salvar/editar.
+-vamos criar um metodo p/ limpar os campos sempre que preenchemos e finalizar.
+IMPORTANTE: pq criar os MÉTODOS? Pq ao invéis de todas vez que usar uma determida tarefa e criar uma mensagem avisando se deu certo ou errado por exemplo;
+apenas chamamos o metodo e o metodo já ta criado pra fazer isso quantas vezes for preciso.
 
+-vamos criar um metodo p/ habilitar/desabilitar os campos (textbox), ou seja, se é possivel ou nao digitar naquela altura. se eu quiser deletar nao vai possivel eu digitar nos campos
+-vamos criar um metodo p/ habilitar/desabilitar os botoes, pq se eu for criar um novo, o editar nao pode tá habilitado, por ex.:
+ATENÇÃO: nas regras de condições: tá tudo comentado no código.
 
+-vamos criar um metodo p/ oucultar colunas indesejaveis na grid, ou seja, na tabela. pra quê mostrar a coloulna código e deletar? vamos oculta-la. e pode ser ocultada qualquer uma, serve como estudo
 
+---
 
 
         

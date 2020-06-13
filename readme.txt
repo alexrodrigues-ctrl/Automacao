@@ -1,3 +1,98 @@
+﻿Criação de sistema de vendas, usando IDE Visual Studio liguagem C#, Banco de Dados; sql server 2014. Será em 3 camadas,
+CamadaApresentação,
+CamadaDados,
+CamadaNegocio.
+
+1)Criando um projeto na IDE chamado AutomaComercial (pode dá o nome q quiser)
+2)Criando as CLASSES: CamadaApresentação, CamadaDados, CamadaNegocio.
+3)Criando as referencias entre as camadas, p/ usar as funcoes umas das outras, (CamadaNegocio, ref com CamadaDados. CamadaApresentacao ref com CamadaNegocio )
+
+na IDE, por enquanto é só, vamos por SQL Server 2014
+
+4)Vamos agora preparar banco de dados: (Definir Tabelas/Modelagem/Chave Primaria/chave estrangera).
+A intenção é usar o BD p/ tratar as consulta no BD, e nao fazer as consulta pelo C#.
+Conexao no Banco de Dados, criar as query no SQL, e apenas chamar pelo C# //fazer um procedimento: buscar, inserir, apagar e editar.
+////////////////////////////////////////////////
+*Banco de Dados BD:
+nome banco de dado: dbcomercio
+usuario: sa
+senha: definida pelo usuario
+ 5) crie um banco de dado e escolha um nome: por ex.: dbcomercio
+ 6) Crie uma nova consulta (New Query) CRIAR TABELA DE CATEGORIA:
+
+//já na tela da query
+--para utilizar o banco de dados dbcomercio o use o camando abaixo: isso faz ativa o BD que vamos usar.
+use dbcomercio
+
+--criando procedimento (procedure) mostar
+create proc spmostrar_categoria
+as
+select top 200 *from categoria
+order by idcategoria desc
+go
+
+--procedimento buscar nome
+create proc spbuscar_nome
+@textobuscar varchar(50)
+as select * from categoria
+where nome like @textobuscar + '%'
+go
+
+--procedimento inserir na categoria: o variavel @idcategoria, será usado no speditar_categoria, p/ ser setado no idcategoria
+create proc spinserir_categoria
+@idcategoria int output,
+@nome varchar(50) ,
+@descricao varchar(100)
+as
+insert into categoria (nome, descricao)
+values (@nome, @descricao)
+go 
+
+--procedimento editar a categoria: neste caso vou setar no idcategoria as edições feitas (nome=@nome, descricao=@descricao 'onde' idcategoria=@idcategoria)
+create proc speditar_categoria
+@idcategoria int,
+@nome varchar(50) ,
+@descricao varchar(100)
+as
+update categoria set
+ nome=@nome,
+ descricao=@descricao where
+ idcategoria=@idcategoria
+ go
+
+ --procedimento deletar
+ create proc spdeletar_categoria
+ @idcategoria int
+ as
+ delete from categoria where
+ idcategoria=@idcategoria
+ go
+
+ //fim query.
+ Voltando para IDE Visual Studio 2019.
+
+ Uma vez o BD todo pronto, vamos pra IDE devenvolver os código em C# para chamar o BD.
+
+ Abra a IDE Visual Studio e abra o projeto, dei o nome: AutomaComercial
+
+ PS.: OS algoritmo estao todos pronto e comentados nas classe e projetos, é só clonar/baixar e seguir.
+ Se tiver alguma dificuldades é só me acionar pelo email: alex.zatec@gmail.com
+ Farei o acompanhamento sem qualquer problema, isso fará com que meu desenvolminto se aprimore. Não desista!
+
+ 7) No projeto dentro da CamadaDados, vamos criar uma classe chamada 'DCategoria' - class DCategoria //Classe Dados da Categoria
+ nessa classe 'DCategoria' vamos criar as propriedade p/ obter e setar os campos. 
+
+ PS.: OS algoritmo estao todos pronto e comentados nas classe e projetos, é só clonar/baixar e seguir.
+
+11/06/2020 
+na classe DCategoria vamos continua criando os construtores, um vazio q ser generico p/ todas as classes, e outro com parametros do tipo 'int DCategoria Categoria'
+p/ reacionar os campos das propriedades com o banco de dados, usando o this.
+//cria metodos 'inserir, editar, busca, mostrar' p/ tratar e chamar quando for necessario.
+
+continuando 11/06/2020
+-preparando os méodos p/ acessar o dados, lembrando de fazer tramanto de erros, try, catch, finally, veja classe DCategoria
+-iniciar paramentos p/ insercao.
+
 12/06/2020 -parte1
 //terminado de codificar no C# a chamada via a procedures e conexao do banco de dados na CamadaDados nos metodos() inserir, editar, excluir, mostrar  e buscarnome.
 -assim terminei de preparar minha CamadaDados na classe 'DCategoria'.
@@ -13,274 +108,26 @@
 -No formulário frmCategoria foi criado um tabcontrol com duas abas 'Listar' e 'Configurações' em lista será exibi, em configuracoes sera modificado os dados.
 -clonando o projeto terá as tela a disposição. Uso a IDE Visual Studio 2019.
 
+13/06/2020 -p1
+//vamos tratar de informacoes ao usuario, usando errorProvider e toolTip no formulario Controle de Categoria (frmcategoria), apenas p/ indicar ao usuario cada textbox o q se espera.
+-errorProvider, vai mostrar o icone de erro,
+-toolTip, vai mostrar a mensagem que vou definir no campo a ser preenchido. na propriedade deve coloca com true a opcao Isballoon, p/ q o balao de mensagem seja exibida.
+-agora no EVENTO LOAD do formcategoria (frmcategoria_Load) referenci a CamadaNegocio com o formcategoria e adiciona o using CamadaNegocio;pq vamos usar muitas funcoes q tá no CamadaNegocio 
+-ainda no LOAD, crie as variaveis p/ poder diferenciar quando estamos criando um novo ou apenas editando: 
+private bool eNovo = false;  private bool eEditar = false;
 
+-vamos criar um metodo p/ chamar ums mensagem de quando salvou, editou com sucesso e outra pra avisar se deu erro ao salvar/editar.
+-vamos criar um metodo p/ limpar os campos sempre que preenchemos e finalizar.
+IMPORTANTE: pq criar os MÉTODOS? Pq ao invéis de todas vez que usar uma determida tarefa e criar uma mensagem avisando se deu certo ou errado por exemplo;
+apenas chamamos o metodo e o metodo já ta criado pra fazer isso quantas vezes for preciso.
 
+-vamos criar um metodo p/ habilitar/desabilitar os campos (textbox), ou seja, se é possivel ou nao digitar naquela altura. se eu quiser deletar nao vai possivel eu digitar nos campos
+-vamos criar um metodo p/ habilitar/desabilitar os botoes, pq se eu for criar um novo, o editar nao pode tá habilitado, por ex.:
+ATENÇÃO: nas regras de condições: tá tudo comentado no código.
 
-11/06/2020- part2
-criamos e parametramos os metodos da classe DCategoria: inserir, editar, excluir, assim buscando no C# via procedures, ou seja o banco vai fazer a execução chamda no C#. algoritmo comentados passo-a-passo.
+-vamos criar um metodo p/ oucultar colunas indesejaveis na grid, ou seja, na tabela. pra quê mostrar a coloulna código e deletar? vamos oculta-la. e pode ser ocultada qualquer uma, serve como estudo
 
-11/06/2020 
-//na classe DCategoria vamos continua criando os construtores, um vazio q ser generico p/ todas as classes, e outro com parametros do tipo 'int DCategoria Categoria'
-p/ reacionar os campos das propriedades com o banco de dados, usando o this.
-//cria metodos 'inserir, editar, busca, mostrar' p/ tratar e chamar quando for necessario.
+---
 
 
-###################################### modulo 00  #########################################
-#preparação
-#Nome: AutomaçãoComercial
-
-#IDE visualstudio2019
-#NetFramwor4.7
-#DB Sql Serve2014 adavance. ta na raiz de dev do sistema.pass.Mixer sistema user *******sa
-
-
-#modelo 3 camadas:
-
-1º)-camada de banco de dados:
-(Definir Tabelas/Modelagem/Telas)
-
-CRIAR TABELA DE CATEGORIA:
-*Banco de Dados:
-nome banco de dado: dbcomercio
-usuario: sa
-
-*Tabelas de clico de produtos (categoria/apresentacao/):
-######################################### criar tabelas ##################################
-tabela: categoria
-idcategoria int NOnull -chaveprimaria- auto-incremento
-nome varchar(50) NOnull
-descricao varchar(100) null
--------------------------------------------------------------
-tabela: apresentacao
-idapresentacao int Nonull -cp- auto-incremento
-nome varchar(50) Nonull
-descricao  varchar(100) null
--------------------------------------------------------------
-tabela: produtos
-idproduto int Nonull -cp- auto-incremento
-codigo varchar(50) Nonull
-nome varchar(50) Nonull
-descricao varchar(500) null
-imagem image null
-idcategoria int Nonull
-idapresentacao int Nonull
-------------------------------------------------------------
-tabela: fornecedor
-idfornecedor int -cp- -ai- NOnull
-idempresa varchar(50) Nonull
-setor_comercial varchar(50) NOnull
-tipo_documento varcha(50) Nonull
-num_documento varchar(50) Nonull
-endereco varchar (150) NOnull
-telefone varchar (50) Nonull
-email varchar (50) null
-url varchar(50) null
-------------------------------------------------------------
-tabela: login
-vou usar tabela de funcionário
-------------------------------------------------------------
-tabela: funcionario
-idfuncionario int -cp- -ac- Nonull
-nome varchar(50) Nonull
-sobrenome varchar(50) Noll
-sexo varchar(1) Nonull
-data_nascimento	date Nonull
-num_documento varchar(50) Nonull
-endereco varchar(50) Nonull
-telefone varchar(50) Nonull
-email varchar(50) null
-acesso varchar(50) Nonull
-usuario Varchar (50) Nonull
-senha varchar(50) Nonull
--------------------------------------------------------------
-tabela : entrada (entrada de produtos)
-identrada int -cp- -ac- Nonull
-idfuncionario int 
-idfornecedor int
-data date
-tipo_comprovante v(50)
-serie v(4) 
-correlativo v(7) 
-imposto decimal(4,2) - caso se tiver muito volume de produto pode aumentar
--------------------------------------------------------------
-
-tabela: descricao
-iddetalhe_entrda	int -ap- -ac- Nonull
-identrada int	
-idproduto int
-preco_compra money
-preco_venda money
-estoque_atual int	
-data_producao	date null
-date_vencimento date
-------------------------------------------------------------
-tabela: cliente
-idcliente int
-nome v(50)
-sobrenome v(50) null -pode ser vendido por uma empresa por q pode ser null
-sexo v(1) null
-tipo_documento v(50) null 
-num_documento V(50) null
-endereco v(150) null
-telefone v(50) null
-email v(50) null
----------------------------------------------------------
-
-tabela: venda
-idvenda int -cp- -ac- Nonull
-idcliente int
-idfuncionario int
-data date
-tipo_comprovante	v(50)
-serie v(4)
-correlativo v(7) null
-imposto decimal(4,2) null
-
----------------------------------------------------------
-
-tabela: detalhe_venda
-iddetalhe_venda int -cp- -ac-
-idvenda int
-iddetalhe_entrada int
-quantidade int
-preco_venda money
-desconto money null
---------------------------------------------------------
-
-############################# Fim criar tabelas ##################################
-
-
-*********vamos relacionar as tabelas*****************
-
-####################################criar diagramas das tabelas#######################
-
-organizar o diagrama das tabelas:
-
-ligar os ID das tabela, criando as ForKeys:
-CATEGORIA C/ PRODUTOS
-"ligar o idcategoria de -CATEGORIA- com idcategoria de -PRODUTOS-"
-(com isso, a PK 'primary key' da tab categoria tá gerando uma chave estrangera 'FK' com a tab. produtos no campo idcategoria ) - OK confirmar / OK confirmar
-(é criada um chave de 1paramuitos - uma categoria para muitos produtos)
-
-APRESENTACAO C/ PRODUTOS
-"idcategoria --> idapresentacao"
-
-PRODUTOS C/ DETALHE_ENRTRADA
-"idproduto --> idprodutos"
-
-ENTRADA C/ DETALHE_ENTRADA
-"identrada --> identrada" ---(aqui vamos alterar o seguinte detalhes: DESINGNER DE BANCO DE DADOS --> ESPECIFICAR 'INSERT' E 'UPDATE', vamos deixar em 'atualizar regra' e 'excluir regra'como cascata, para toda vez q a tabela ENTRADA ou DETELHE_ENTRADA for alterada, automaticamente ELAS se atualizarem por si só.)
-
-FORNECEDOR C/ ENTRADA
-"idfornecedor --> idfornecedor"
-
-FUNCIONARIO /C ENTRADA
-"idfuncionario --> idfuncionario"
-
-VENDA C/ DETALHE_VENDA
-"idvenda --> idvenda"  ---(aqui vamos alterar o seguinte detalhes: DESINGNER DE BANCO DE DADOS --> ESPECIFICAR 'INSERT' E 'UPDATE', vamos deixar em 'atualizar regra' e 'excluir regra'como cascata, para toda vez q a tabela VENDA ou DETELHE_VENDA for alterada, automaticamente ELAS se atualizarem por si só.)
-
-
-DETALHE_ENTRADA C/ DETALHE_VENDA
-"iddetalhe_entrada --> iddetalheentrada"
-
-
-CLIENTES C/ VENDA
-"idcliente --> idcliente"
-
-FUNCIONARIOS C/ VENDA
-"idfuncionario --> idfuncionario"
-
-############################################   fim diagrama  ######################################
-
-
-
-2º)-camada de apresentacao:
-Vamos criar referencia com a CamadaApresentacao com a CamadaNegocio,
--Referencia --> CamadaNegocio
-
-3º)-camada de negocio:
-Vamos criar referencia com a camada de negocio com a camada de banco de dados,
--Referencia --> CamadaDados
-
-4º o AutomaComercial:
-Vamos criar referencia de AutomaComercial  com a CamadaApresentacao,
--Referencia --> CamadaApresentacao
-
---
---
---
-> O projeto 'AutomaComercial'passa informaçoes pra CamadaApresentacao que vai passar informaçoes para CamadaNegocio q vai passar pra CamadaDados.
-> Vamos criar na CamadaDados uma classe chamada 'Conexao' que vai regerenciar o banco de dados, como nome do servidor e o [BD],
-
-
-
-#Sistema p/ Comércio:
-******************************************************************************
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>
-
-
-
-
-
-
-
-
+        
