@@ -1,5 +1,0 @@
-C:\ProjetosSharp\Automacao\AutomaComercial\CamadaDados\bin\Debug\netstandard2.0\CamadaDados.deps.json
-C:\ProjetosSharp\Automacao\AutomaComercial\CamadaDados\bin\Debug\netstandard2.0\CamadaDados.dll
-C:\ProjetosSharp\Automacao\AutomaComercial\CamadaDados\obj\Debug\netstandard2.0\CamadaDados.csprojAssemblyReference.cache
-C:\ProjetosSharp\Automacao\AutomaComercial\CamadaDados\obj\Debug\netstandard2.0\CamadaDados.AssemblyInfoInputs.cache
-C:\ProjetosSharp\Automacao\AutomaComercial\CamadaDados\obj\Debug\netstandard2.0\CamadaDados.AssemblyInfo.cs

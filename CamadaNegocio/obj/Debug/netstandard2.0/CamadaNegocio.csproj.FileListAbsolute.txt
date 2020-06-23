@@ -1,4 +1,0 @@
-C:\ProjetosSharp\Automacao\AutomaComercial\CamadaNegocio\bin\Debug\netstandard2.0\CamadaDados.dll
-C:\ProjetosSharp\Automacao\AutomaComercial\CamadaNegocio\obj\Debug\netstandard2.0\CamadaNegocio.csprojAssemblyReference.cache
-C:\ProjetosSharp\Automacao\AutomaComercial\CamadaNegocio\obj\Debug\netstandard2.0\CamadaNegocio.AssemblyInfoInputs.cache
-C:\ProjetosSharp\Automacao\AutomaComercial\CamadaNegocio\obj\Debug\netstandard2.0\CamadaNegocio.AssemblyInfo.cs
