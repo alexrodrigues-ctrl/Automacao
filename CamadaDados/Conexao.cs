@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+using System.Data.Sql;
+using System.Configuration;
 
 namespace CamadaDados
 {
-    class Conexao
+    public class Conexao
     {
-        public static string Cn = "Data Source= ZATEC; Initial Catalog= dbcomercio; Integrated Security= true";
+        public static string Cn = "Data Source=ZATEC\\SQLEXPRESS;Initial Catalog=dbcomercio;Integrated Security=True";
     }
 }

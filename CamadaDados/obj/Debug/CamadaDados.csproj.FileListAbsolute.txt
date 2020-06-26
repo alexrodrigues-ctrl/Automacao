@@ -1,0 +1,6 @@
+E:\Sistema\SysComercio\CamadaDados\bin\Debug\CamadaDados.dll
+E:\Sistema\SysComercio\CamadaDados\bin\Debug\CamadaDados.pdb
+E:\Sistema\SysComercio\CamadaDados\obj\Debug\CamadaDados.csprojAssemblyReference.cache
+E:\Sistema\SysComercio\CamadaDados\obj\Debug\CamadaDados.csproj.CoreCompileInputs.cache
+E:\Sistema\SysComercio\CamadaDados\obj\Debug\CamadaDados.dll
+E:\Sistema\SysComercio\CamadaDados\obj\Debug\CamadaDados.pdb
