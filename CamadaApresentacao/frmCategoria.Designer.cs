@@ -126,6 +126,7 @@
             this.dataGridView_Lista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_Lista.Size = new System.Drawing.Size(548, 241);
             this.dataGridView_Lista.TabIndex = 6;
+            this.dataGridView_Lista.DoubleClick += new System.EventHandler(this.dataGridView_Lista_DoubleClick);
             // 
             // Deletar
             // 
@@ -225,6 +226,7 @@
             this.btn_Cancelar.TabIndex = 9;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
             // btn_Novo
             // 
@@ -234,6 +236,7 @@
             this.btn_Novo.TabIndex = 8;
             this.btn_Novo.Text = "Novo";
             this.btn_Novo.UseVisualStyleBackColor = true;
+            this.btn_Novo.Click += new System.EventHandler(this.btn_Novo_Click);
             // 
             // btn_Editar
             // 
@@ -243,6 +246,7 @@
             this.btn_Editar.TabIndex = 7;
             this.btn_Editar.Text = "Editar";
             this.btn_Editar.UseVisualStyleBackColor = true;
+            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
             // btn_Salvar
             // 
@@ -252,6 +256,7 @@
             this.btn_Salvar.TabIndex = 6;
             this.btn_Salvar.Text = "Salvar";
             this.btn_Salvar.UseVisualStyleBackColor = true;
+            this.btn_Salvar.Click += new System.EventHandler(this.btn_Salvar_Click);
             // 
             // txt_Descricao
             // 

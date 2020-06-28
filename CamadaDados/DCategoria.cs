@@ -56,6 +56,17 @@ namespace CamadaDados
         {
             string resp="";
             //string connectionString = @"Data Source=ZATEC;Initial Catalog=dbcomercio;Integrated Security=True";
+
+            //string conexao = @"Data Source=ZATEC\SQLEXPRESS;Initial Catalog=dbcomercio;Integrated Security=True"; 
+            //SqlConnection sqlconn = new SqlConnection(conexao);
+            //sqlconn.Open();
+            //if (sqlconn.State == ConnectionState.Open)
+            //{
+            //    MessageBox.Show("abriu o bd");
+            //}
+            //else { MessageBox.Show("NAO abriu o bd"); }
+
+
             SqlConnection SqlCon = new SqlConnection();
             try
             {
@@ -92,7 +103,7 @@ namespace CamadaDados
                 SqlCmd.Parameters.Add(ParDescricao);
                 
                 //testar executar o camando
-                resp=SqlCmd.ExecuteNonQuery()==1? "ok" :" nao teve registro";
+                resp=SqlCmd.ExecuteNonQuery()==1? "OK" :" Registro não foi Inserido";
                 
             }
             catch (Exception ex)
@@ -147,13 +158,13 @@ namespace CamadaDados
                 SqlCmd.Parameters.Add(ParDescricao);
 
                 //testar executar o camando
-                resp = SqlCmd.ExecuteNonQuery() == 1 ? "ok" : " nao editou registro";
+                resp = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : " Edição do Registro não foi realizada";
 
             }
             catch (Exception ex)
             {
-                //resp = ex.Message;
-                resp = "Erro ao conectar ao Banco de Dados";
+                resp = ex.Message;
+                //resp = "Erro ao conectar ao Banco de Dados";
             }
             finally
             {
@@ -165,7 +176,6 @@ namespace CamadaDados
         public DataTable Mostrar()
         {
             DataTable DtResultado = new DataTable("categoria");
-            //string connectionString = @"Data Source=ZATEC;Initial Catalog=dbcomercio;Integrated Security=True";
             SqlConnection SqlCon = new SqlConnection();
             try
             {
@@ -208,13 +218,13 @@ namespace CamadaDados
                 SqlCmd.Parameters.Add(ParIdCategoria);
                 
                 //testar executar o camando
-                resp = SqlCmd.ExecuteNonQuery() == 1 ? "ok" : " nao excluiu o registro";
+                resp = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : " nao excluiu o registro";
 
             }
             catch (Exception ex)
             {
-                //resp = ex.Message;
-                resp = "Erro ao conectar ao Banco de Dados";
+                resp = ex.Message;
+                //resp = "Erro ao conectar ao Banco de Dados";
             }
             finally
             {
@@ -226,7 +236,6 @@ namespace CamadaDados
         public DataTable BuscarNome(DCategoria Categoria)
         {
             DataTable DtResultado = new DataTable("categoria");
-            //string connectionString = @"Data Source=ZATEC;Initial Catalog=dbcomercio;Integrated Security=True";
             SqlConnection SqlCon = new SqlConnection();
             try
             {
